@@ -6,18 +6,18 @@ import '../04-styles.css'
 
 function Composant({onsubmit}) {
   const [value, setValue] = React.useState('')
-  const ref = React.useRef()
+  const inputRef = React.useRef()
 
   //React.useLayoutEffect(() => {
   React.useEffect(() => {
-    ref.current.focus()
+    inputRef.current.focus()
   })
 
   return (
     <div>
       <input
         className=""
-        ref={ref}
+        ref={inputRef}
         type="text"
         value={value}
         onChange={e => setValue(e.target.value)}
