@@ -18,8 +18,8 @@ function useFindMarvelByName(marvelName) {
     setError(null)
     setMarvel(null)
     fetchMarvel(marvelName)
-      .then((marvel) => setMarvel(marvel))
-      .catch((error) => setError(error))
+      .then(marvel => setMarvel(marvel))
+      .catch(error => setError(error))
   }, [marvelName])
 
   return [marvel, error]
@@ -28,14 +28,17 @@ function useFindMarvelByName(marvelName) {
 function Marvel({marvelName}) {
   const [marvel, error] = useFindMarvelByName(marvelName)
   if (error) {
-    throw error 
+    throw error
   }
   return (
-    <div> {marvel ? `Le marvel existe ${marvel.name}` : `Le marvel n'existe pas`}</div>
+    <div>
+      {' '}
+      {marvel ? `Le marvel existe ${marvel.name}` : `Le marvel n'existe pas`}
+    </div>
   )
 }
 function App() {
-  const [marvelName,setMarvelName] = React.useState('')
+  const [marvelName, setMarvelName] = React.useState('')
   const handleSearch = name => {
     setMarvelName(name)
   }

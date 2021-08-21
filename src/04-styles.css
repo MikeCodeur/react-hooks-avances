@@ -1,0 +1,9 @@
+input {
+  background-color: lightgray;
+  color: black;
+}
+
+input:focus {
+  background-color: lightgreen  ;
+  color: black;
+}

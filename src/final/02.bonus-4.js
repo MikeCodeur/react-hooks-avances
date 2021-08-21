@@ -4,17 +4,22 @@
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
-import {fetchMarvel, MarvelSearchForm, ErrorDisplay,MarvelPersoView} from '../marvel'
+import {
+  fetchMarvel,
+  MarvelSearchForm,
+  ErrorDisplay,
+  MarvelPersoView,
+} from '../marvel'
 import '../02-styles.css'
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'fetching':
-      return {status:'fetching', marvel: null, error: null}
+      return {status: 'fetching', marvel: null, error: null}
     case 'done':
-      return {status:'done', marvel: action.payload, error: null}
+      return {status: 'done', marvel: action.payload, error: null}
     case 'fail':
-      return  {status:'fail', marvel: null, error: action.error}
+      return {status: 'fail', marvel: null, error: action.error}
     default:
       throw new Error('Action non supporté')
   }
@@ -33,8 +38,8 @@ function useFindMarvelByName(marvelName) {
     }
     dispatch({type: 'fetching'})
     fetchMarvel(marvelName)
-      .then((marvel) => dispatch({type: 'done', payload: marvel}))
-      .catch((error) => dispatch({type: 'fail', error}))
+      .then(marvel => dispatch({type: 'done', payload: marvel}))
+      .catch(error => dispatch({type: 'fail', error}))
   }, [marvelName])
 
   return state
@@ -42,22 +47,20 @@ function useFindMarvelByName(marvelName) {
 
 function Marvel({marvelName}) {
   const state = useFindMarvelByName(marvelName)
-  const {error,marvel,status} = state
+  const {error, marvel, status} = state
   if (status === 'fail') {
-    throw error 
+    throw error
   } else if (status === 'idle') {
     return 'enter un nom de Marvel'
   } else if (status === 'fetching') {
     return 'chargement en cours ...'
   } else if (status === 'done') {
-    return (
-      <MarvelPersoView marvel={marvel} />
-    )
+    return <MarvelPersoView marvel={marvel} />
   }
 }
 
 function App() {
-  const [marvelName,setMarvelName] = React.useState('')
+  const [marvelName, setMarvelName] = React.useState('')
   const handleSearch = name => {
     setMarvelName(name)
   }

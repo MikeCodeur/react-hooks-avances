@@ -1,6 +1,5 @@
 // Hook personnalisé
-// 🚀 Gérer le chargement avec un status
-// http://localhost:3000/alone/final/02.bonus-1.js
+// http://localhost:3000/alone/final/02.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
@@ -27,7 +26,7 @@ const reducer = (state, action) => {
   }
 }
 
-function useFetchData(search, fetch) {
+function useFetchData(callback) {
   const [state, dispatch] = React.useReducer(reducer, {
     data: null,
     error: null,
@@ -35,24 +34,37 @@ function useFetchData(search, fetch) {
   })
 
   React.useEffect(() => {
-    if (!search) {
+    const promise = callback()
+    if (!promise) {
       return
     }
     dispatch({type: 'fetching'})
-    fetch(search)
+    promise
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
-  }, [search, fetch])
+  }, [callback])
 
   return state
 }
 
 function useFindMarvelList(marvelName) {
-  return useFetchData(marvelName, fetchMarvelsList)
+  const cb = React.useCallback(() => {
+    if (!marvelName) {
+      return
+    }
+    return fetchMarvelsList(marvelName)
+  }, [marvelName])
+  return useFetchData(cb)
 }
 
 function useFindMarvelByName(marvelName) {
-  return useFetchData(marvelName, fetchMarvel)
+  const cb = React.useCallback(() => {
+    if (!marvelName) {
+      return
+    }
+    return fetchMarvel(marvelName)
+  }, [marvelName])
+  return useFetchData(cb)
 }
 
 function Marvel({marvelName}) {

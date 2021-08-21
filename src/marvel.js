@@ -1,7 +1,13 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
-const marvelApiKey = '6bcc5c7ff0ad488fb58f759c4069964c'
+
+// GET FREE KEY https://developer.marvel.com/account
+// add localhost to referrers  
+// clef limité à 3000 appels par jour 
+
+// const marvelApiKey = '6bcc5c7ff0ad488fb58f759c4069964c'
+const marvelApiKey = '5a4bd353e754599ed13518c2f87509df'
 
 const myHeader = new Headers({
   'Content-Type': 'application/x-www-form-urlencoded',
@@ -62,6 +68,30 @@ const fetchMarvelById = id => {
     }) // ERROR APPEL API
 }
 
+const fetchMarvelsList = name => {
+  const url = `https://gateway.marvel.com:443/v1/public/characters?apikey=${marvelApiKey}&nameStartsWith=${name}`
+  return fetch(url, init)
+    .then(response => response.json())
+    .then(json => {
+      if (json.data.results.length > 0) {
+        return json.data.results
+      } else {
+        return Promise.reject(
+          new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
+        )
+      }
+    })
+    .catch(error => {
+      return Promise.reject(
+        new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
+      )
+    }) // ERROR DU JSON()
+    .catch(error => {
+      return Promise.reject(
+        new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
+      )
+    }) // ERROR APPEL API
+}
 
 function MarvelPersoView({marvel}) {
   return (
@@ -114,4 +144,4 @@ function ErrorDisplay({error}){
   )
 }
 
-export {MarvelPersoView, MarvelSearchForm, fetchMarvel, ErrorDisplay, fetchMarvelById}
+export {MarvelPersoView, MarvelSearchForm, fetchMarvel, ErrorDisplay, fetchMarvelById, fetchMarvelsList}

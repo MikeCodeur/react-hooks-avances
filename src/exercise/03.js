@@ -1,6 +1,5 @@
-// Hook personnalisé
-// 🚀 Gérer le chargement avec un status
-// http://localhost:3000/alone/final/02.bonus-1.js
+// Hook Perso
+// http://localhost:3000/alone/exercise/02.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
@@ -27,6 +26,8 @@ const reducer = (state, action) => {
   }
 }
 
+// ⛏️ supprime 'search' il sera extrait dans 'useCallback' plus tard
+// 🐶 renomme 'fetch' en 'callback' pour plus de clarté
 function useFetchData(search, fetch) {
   const [state, dispatch] = React.useReducer(reducer, {
     data: null,
@@ -35,23 +36,42 @@ function useFetchData(search, fetch) {
   })
 
   React.useEffect(() => {
+    // 🐶 fais un appel à la fonction 'callback' (qui retoune une 'promise')
+    // 🤖 const promise = callback()
+
+    // 🐶 sors de la fonction si  'promise' n'est pas défini
     if (!search) {
       return
     }
     dispatch({type: 'fetching'})
+
+    // ⛏️ supprime `fetch(search)` et utilise `promise`
     fetch(search)
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
+    // 🐶 adapte les dépendances pour que le useEffect ne s'excute sur la modification de 'callback' 
   }, [search, fetch])
 
   return state
 }
 
+// 🐶 Modifie ce hook pour qu'il passe une fonction mémoïsé à 'useFetchData'
 function useFindMarvelList(marvelName) {
+  // 🐶 créé un callback avec `React.useCallback`
+  // 🤖 const cb = React.useCallback(param1, param2)
+  // 1. param1 est une fonction qui :
+  //    - retourne rien si 'marvelName' n'est pas défini
+  //    - return fetchMarvel(marvelName) si 'marvelName' n'est pas défini
+  // 2. param2 les dépendances (marvelName dans ce cas)
+
+  // ⛏️ supprime le paramètre 'marvelName'
+  // 🐶 passe le callback à 'useFetchData'
   return useFetchData(marvelName, fetchMarvelsList)
 }
 
+// 🐶 Modifie ce hook pour qu'il passe une fonction mémoïsé à 'useFetchData'
 function useFindMarvelByName(marvelName) {
+  // 🐶 réptète l'opération
   return useFetchData(marvelName, fetchMarvel)
 }
 

@@ -6,7 +6,6 @@ import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 import {fetchMarvel, MarvelPersoView, MarvelSearchForm, ErrorDisplay} from '../marvel'
 import '../02-styles.css'
- // 🤖 const [count, setCount] = React.useReducer
 
 // 🐶 créé un hook personnalisé 'useMarvelExist' qui va appeler l'api. 
 // Ce hook retournera le state 'exist' à true s'api retourne un marvel

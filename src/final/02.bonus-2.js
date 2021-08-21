@@ -4,7 +4,12 @@
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
-import {fetchMarvel, MarvelSearchForm, ErrorDisplay,MarvelPersoView} from '../marvel'
+import {
+  fetchMarvel,
+  MarvelSearchForm,
+  ErrorDisplay,
+  MarvelPersoView,
+} from '../marvel'
 import '../02-styles.css'
 
 const reducer = (state, action) => ({...state, ...action})
@@ -21,10 +26,10 @@ function useFindMarvelByName(marvelName) {
     }
     dispatch({error: null})
     dispatch({marvel: null})
-    
+
     fetchMarvel(marvelName)
-      .then((marvel) => dispatch({marvel}))
-      .catch((error) => dispatch({error}))
+      .then(marvel => dispatch({marvel}))
+      .catch(error => dispatch({error}))
   }, [marvelName])
 
   return state
@@ -32,16 +37,19 @@ function useFindMarvelByName(marvelName) {
 
 function Marvel({marvelName}) {
   const state = useFindMarvelByName(marvelName)
-  const {error,marvel} = state
+  const {error, marvel} = state
   if (error) {
-    throw error 
+    throw error
   }
   return (
-    <div> {marvel ? <MarvelPersoView marvel={marvel} /> : `Le marvel n'existe pas`}</div>
+    <div>
+      {' '}
+      {marvel ? <MarvelPersoView marvel={marvel} /> : `Le marvel n'existe pas`}
+    </div>
   )
 }
 function App() {
-  const [marvelName,setMarvelName] = React.useState('')
+  const [marvelName, setMarvelName] = React.useState('')
   const handleSearch = name => {
     setMarvelName(name)
   }
