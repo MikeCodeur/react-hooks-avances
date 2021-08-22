@@ -1,5 +1,5 @@
 // Hook personnalisé
-// 🚀 Gérer le chargement avec un status
+// 🚀 fetch générique
 // http://localhost:3000/alone/final/02.bonus-1.js
 
 import * as React from 'react'

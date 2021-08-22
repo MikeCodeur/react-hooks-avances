@@ -42,8 +42,7 @@ const Composant = React.forwardRef(function Composant({onsubmit},ref) {
 
 function App() {
   const composantRef = React.useRef()
-  // eslint-disable-next-line no-unused-vars
-  const [value, setValue] = React.useState('')
+  const [, setValue] = React.useState('')
   const [checked, setChecked] = React.useState('')
 
   const focusInput = () => composantRef.current.focusInput()

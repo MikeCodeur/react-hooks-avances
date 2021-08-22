@@ -41,8 +41,7 @@ function ComposantLent() {
 }
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [value, setValue] = React.useState('')
+  const [, setValue] = React.useState('')
   return (
     <div>
       <Composant onsubmit={setValue} />

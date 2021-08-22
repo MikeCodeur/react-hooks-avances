@@ -1,5 +1,6 @@
 // useCallback
-// http://localhost:3000/alone/final/03.js
+// 🚀 Retourner un useCallback
+// http://localhost:3000/alone/final/02.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
@@ -26,49 +27,49 @@ const reducer = (state, action) => {
   }
 }
 
-function useFetchData(callback) {
+function useFetchData() {
   const [state, dispatch] = React.useReducer(reducer, {
     data: null,
     error: null,
     status: 'idle',
   })
+  const {data, error, status} = state
 
-  React.useEffect(() => {
-    const promise = callback()
-    if (!promise) {
-      return
-    }
+  const execute = React.useCallback(promise => {
     dispatch({type: 'fetching'})
     promise
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
-  }, [callback])
+  },[])
 
-  return state
+  return {data, error, status, execute}
 }
 
 function useFindMarvelList(marvelName) {
-  const cb = React.useCallback(() => {
+  const  {data, error, status, execute} = useFetchData()
+  React.useEffect(() => {
     if (!marvelName) {
       return
     }
-    return fetchMarvelsList(marvelName)
-  }, [marvelName])
-  return useFetchData(cb)
+    execute(fetchMarvelsList(marvelName))
+  }, [marvelName,execute])
+  return {data, error, status}
 }
 
 function useFindMarvelByName(marvelName) {
-  const cb = React.useCallback(() => {
+  const  {data, error, status, execute} = useFetchData()
+  React.useEffect(() => {
     if (!marvelName) {
       return
     }
-    return fetchMarvel(marvelName)
-  }, [marvelName])
-  return useFetchData(cb)
+    execute(fetchMarvel(marvelName))
+  }, [marvelName, execute])
+  return {data, error, status}
 }
 
 function Marvel({marvelName}) {
   const state = useFindMarvelByName(marvelName, fetchMarvelById)
+  
   const {data: marvel, error, status} = state
   if (status === 'fail') {
     throw error

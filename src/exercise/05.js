@@ -44,8 +44,8 @@ function Composant({onsubmit}) {
 }
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [value, setValue] = React.useState('')
+
+  const [, setValue] = React.useState('')
   const [checked, setChecked] = React.useState('')
 
   // 🐶 créé une référence avec `React.useRef()`.
