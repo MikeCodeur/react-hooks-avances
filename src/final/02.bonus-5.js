@@ -1,6 +1,6 @@
 // Hook personnalisé
 // 🚀 fetch générique
-// http://localhost:3000/alone/final/02.bonus-1.js
+// http://localhost:3000/alone/final/02.bonus-5.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'

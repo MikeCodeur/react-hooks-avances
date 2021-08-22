@@ -1,6 +1,6 @@
 // Hook personnalisé
 // 🚀 Type d'action et payload
-// http://localhost:3000/alone/final/02.bonus-1.js
+// http://localhost:3000/alone/final/02.bonus-3.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'

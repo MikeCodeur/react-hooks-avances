@@ -1,6 +1,6 @@
 // Hook personnalisé
 // 🚀 Gérer le chargement avec un status
-// http://localhost:3000/alone/final/02.bonus-1.js
+// http://localhost:3000/alone/final/02.bonus-4.js
 
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'

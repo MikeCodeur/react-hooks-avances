@@ -15,8 +15,8 @@ interface IQCMInterface {
 
 const QCM: Array<IQCMInterface> = [
   {
-    exerciseId: 'src/exercise/07.md',
-    exerciseTitle: 'useEffect : Appels HTTP simples',
+    exerciseId: 'src/exercise/01.md',
+    exerciseTitle: 'useReducer : Compteur',
     quiz: [
       {
         question: "Valide simplement cet exercice en cliquant sur validé",
@@ -27,52 +27,69 @@ const QCM: Array<IQCMInterface> = [
   },
   {
     exerciseId: 'src/exercise/02.md',
-    exerciseTitle: 'Manipuler le DOM',
+    exerciseTitle: 'Hooks Personnalisés : Logique réutilisable',
     quiz: [
       {
-        question: "DOM cest quoi  ?",
-        options: ["chrome", "bbb", "sss", "ddd"],
+        question: "Valide simplement cet exercice en cliquant sur validé",
+        options: ["Validé", "Non validé"],
         answer: "0"
-      },{
-        question: "HMTL est ",
-        options: ["a2", "b2", "c2", "d2"],
-        answer: "2"
-      },{
-        question: "Render app",
-        options: ["a3", "b3", "c3", "d3"],
-        answer: "3"
-      },{
-        question: "How heavy are you?",
-        options: ["a3", "b3", "c3", "d3"],
-        answer: "1"
-      },{
-        question: "How heavy are you?",
-        options: ["a3", "b3", "c3", "d3"],
-        answer: "1"
-      },{
-        question: "How heavy are you?",
-        options: ["a3", "b3", "c3", "d3"],
-        answer: "1"
-      },{
-        question: "How heavy are you?",
-        options: ["a3", "b3", "c3", "d3"],
-        answer: "1"
       }
     ],
   },
   {
     exerciseId: 'src/exercise/03.md',
-    exerciseTitle: 'Manipuler le style',
+    exerciseTitle: 'useCallBack',
     quiz: [
       {
-        question: "LEs styles  ?",
-        options: ["css", "jss", "xss", "pdf"],
+        question: "Valide simplement cet exercice en cliquant sur validé",
+        options: ["Validé", "Non validé"],
         answer: "0"
-      },{
-        question: "HMTL est ",
-        options: ["a2", "b2", "c2", "d2"],
-        answer: "2"
-      } 
+      }
+    ],
+  },
+  {
+    exerciseId: 'src/exercise/04.md',
+    exerciseTitle: 'useLayoutEffect',
+    quiz: [
+      {
+        question: "Valide simplement cet exercice en cliquant sur validé",
+        options: ["Validé", "Non validé"],
+        answer: "0"
+      }
+    ],
+  },
+  {
+    exerciseId: 'src/exercise/05.md',
+    exerciseTitle: 'useImperativeHandle',
+    quiz: [
+      {
+        question: "Valide simplement cet exercice en cliquant sur validé",
+        options: ["Validé", "Non validé"],
+        answer: "0"
+      }
+    ],
+  },
+  {
+    exerciseId: 'src/exercise/06.md',
+    exerciseTitle: 'useContext',
+    quiz: [
+      {
+        question: "Valide simplement cet exercice en cliquant sur validé",
+        options: ["Validé", "Non validé"],
+        answer: "0"
+      }
+    ],
+  },
+  
+  {
+    exerciseId: 'src/exercise/07.md',
+    exerciseTitle: 'useDebugValue',
+    quiz: [
+      {
+        question: "DOM cest quoi  ?",
+        options: ["chrome", "bbb", "sss", "ddd"],
+        answer: "0"
+      }
     ],
   },
 ]
