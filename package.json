@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "private": true,
   "keywords": [],
-  "homepage": "http://react-hooks-avances.mikecodeur.com",
+  "homepage": "https://react-hooks-avances.mikecodeur.com",
   "license": "GPL-3.0-only",
   "main": "src/index.js",
   "engines": {
