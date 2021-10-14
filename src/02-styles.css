@@ -1,0 +1,37 @@
+.marvel-app {
+  text-align: center;
+}
+.marvel-detail {
+  text-align: center;
+}
+.component-header {
+  padding: 15px;
+  position: relative;
+  font-weight: normal;
+  font-size: 32px;
+  text-align: center;
+  color: #333;
+}
+
+.marvel-img {
+  text-align: center;
+}
+
+.marvel-name {
+  text-align: center;
+  margin-top: 20px;
+} 
+
+.marvel-wrapper {
+  text-align: center;
+}
+.marvel-wrapper ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.marvel-wrapper li {
+  list-style: none;
+  padding: 2px 5px;
+}
+
