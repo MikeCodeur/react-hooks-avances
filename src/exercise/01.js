@@ -4,9 +4,9 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react'
 
-// 🐶 retourne la bonne valeur dans le reducer
-// On veut avoir le meme comportement que useState
-// la valeur retouné du reducer doit etre le nouveau state
+// 🐶 retourne la bonne valeur dans le 'reducer'
+// On veut avoir le meme comportement que 'useState'
+// la valeur retournée du 'reducer' doit etre le nouveau 'state'
 const reducer = (prevState, newState) => {}
 
 function Compteur() {
