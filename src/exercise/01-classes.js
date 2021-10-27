@@ -77,40 +77,36 @@ const reducer = (state, action) => {
   // 🤖 return {...state, ...action}
 }
 
-// 🐶 Converti en composant fonctionnel 
+// 🐶 Converti en composant fonctionnel
 // renome 'class' en 'function' et supprime 'extends React.Component'
 class App extends React.Component {
-
   // 🐶 Siumlation 'setState' avec 'useReducer' :
-    // 1. créé un 'state'/'setState' avec 'useReducer'
-    // 🤖 const [state, setState] = React.useReducer(reducer)
-    // 2. ⛏️ déplace ces valeurs par défauts dans le 'useReducer' (2ème param de useReducer)
-    state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    // 3. implemente la fonction reducer 
-  
+  // 1. créé un 'state'/'setState' avec 'useReducer'
+  // 🤖 const [state, setState] = React.useReducer(reducer)
+  // 2. ⛏️ déplace ces valeurs par défauts dans le 'useReducer' (2ème param de useReducer)
+  state = {
+    total: null,
+    next: null,
+    operation: null,
+  }
+  // 3. implemente la fonction reducer
+
   // 🐶 ajoute `const` devant 'handleClick'
   handleClick = buttonName => {
     // ⛏️ supprime les références à this
-    this.setState(calculate(this.state, buttonName));
-  };
+    this.setState(calculate(this.state, buttonName))
+  }
 
   // ⛏️ supprime 'render'
   render() {
     return (
       <div className="component-app">
         {/* ⛏️ supprime les references à this */}
-        <Display value={this.state.next || this.state.total || "0"} />
+        <Display value={this.state.next || this.state.total || '0'} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
-    );
+    )
   }
 }
 
 export default App
-
-
-

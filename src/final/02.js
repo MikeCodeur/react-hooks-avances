@@ -29,7 +29,7 @@ function Marvel({marvelName}) {
   )
 }
 function App() {
-  const [marvelName,setMarvelName] = React.useState('')
+  const [marvelName, setMarvelName] = React.useState('')
   const handleSearch = name => {
     setMarvelName(name)
   }

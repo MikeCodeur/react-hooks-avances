@@ -9,7 +9,7 @@ function Composant({onsubmit}) {
   const inputRef = React.useRef()
 
   React.useLayoutEffect(() => {
-  //React.useEffect(() => {
+    //React.useEffect(() => {
     inputRef.current.focus()
   })
 

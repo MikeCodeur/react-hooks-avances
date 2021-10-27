@@ -4,6 +4,6 @@ input {
 }
 
 input:focus {
-  background-color: lightgreen  ;
+  background-color: lightgreen;
   color: black;
 }

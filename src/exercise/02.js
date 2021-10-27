@@ -4,12 +4,17 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
-import {fetchMarvel, MarvelPersoView, MarvelSearchForm, ErrorDisplay} from '../marvel'
+import {
+  fetchMarvel,
+  MarvelPersoView,
+  MarvelSearchForm,
+  ErrorDisplay,
+} from '../marvel'
 import '../02-styles.css'
 
-// 🐶 créé un hook personnalisé 'useMarvelExist' qui va appeler l'api. 
+// 🐶 créé un hook personnalisé 'useMarvelExist' qui va appeler l'api.
 // Ce hook retournera le state 'exist' à true s'api retourne un marvel
-// Il retournera  à false si fetchMarvel lève une erreur 
+// Il retournera  à false si fetchMarvel lève une erreur
 function useMarvelExist(marvelName) {
   // 🐶 créé un state 'exist'
   const [exist, setExist] = React.useState(false)
@@ -18,7 +23,7 @@ function useMarvelExist(marvelName) {
     if (!marvelName) {
       return
     }
-    // 🐶 gère l'appelle de l'api 
+    // 🐶 gère l'appelle de l'api
     // fetchMarvel(marvelName)
     //   .then(() => /* met le state exist à true */)
     //   .catch(() => /* met le state exist à false */)
@@ -31,17 +36,16 @@ function useMarvelExist(marvelName) {
 }
 
 function Marvel({marvelName}) {
-  
   // ⛏️ remplace false par le hook personnalisé
   // 🤖 `useMarvelExist(marvelName)`
-  const marvelExist = false;
+  const marvelExist = false
   return (
     <div> {marvelExist ? `Le marvel existe` : `Le marvel n'existe pas`}</div>
   )
 }
 
 function App() {
-  const [marvelName,setMarvelName] = React.useState('')
+  const [marvelName, setMarvelName] = React.useState('')
   const handleSearch = name => {
     setMarvelName(name)
   }

@@ -114,7 +114,7 @@ function useFindMarvelByName(marvelName) {
 
 function useFindMarvelList(marvelName) {
   const [cache, dispatch] = useMarvelCache()
-  
+
   // 🐶 utilise React.useDebugValue(cache) pour debuger le cache
   // React.useDebugValue(cache[`${marvelName}-list`], cacheFormatDebugValue)
   const {data, error, status, execute, setData} = useFetchData()

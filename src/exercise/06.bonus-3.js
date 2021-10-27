@@ -19,7 +19,7 @@ import '../02-styles.css'
 
 // 🐶 Créé un reducer 'marvelCacheReducer' pour gérer les données en cache
 // 🤖 utilise une fonction de ce style :
-// 
+//
 // function marvelCacheReducer(state, action) {
 //   switch (action.type) {
 //     case 'ADD_MARVEL': {
@@ -34,27 +34,23 @@ import '../02-styles.css'
 //   }
 // }
 
-// 🐶 Créé un Context Provider 'MarvelCacheProvider' 
+// 🐶 Créé un Context Provider 'MarvelCacheProvider'
 function MarvelCacheProvider(props) {
   // 🐶 Utlise le 'marvelCacheReducer' avec `React.useReducer`
   // 🤖 const [cache, dispatch] = React.useReducer(marvelCacheReducer, {})
-
   // 🐶 Retourne le provider avec les données du reducer
   // 🤖 return <MarvelCacheContext.Provider value={[cache, dispatch]} {...props} />
 }
 
-
 // 🐶 Crée un Context Consumer 'useMarvelCache'
 function useMarvelCache() {
   // 🐶 Utlise le contexte 'MarvelCacheContext' avec `React.useContext(MarvelCacheContext)`
-
   // 🤖 gère le cas ou 'useMarvelCache' n'est pas utilisé avec le provider
   // if (!context) {
   //   throw new Error('useMarvelCache doit être utilisé avec MarvelCacheProvider')
   // }
   // return context
 }
-
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -83,12 +79,12 @@ function useFetchData() {
     promise
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
-  },[])
+  }, [])
 
   // 🐶 Dans le cas où l'on n'appelle pas d'API Rest (execute) on doit
   // pourvoir mettre à jour des données.
   // Pour cela on va retourner un callback 'setData' qui mettra à jour les data.
-  // 🤖 
+  // 🤖
   // const setData = React.useCallback(
   //   data => dispatch({type: 'done', payload: data}),
   //   [dispatch],
@@ -104,27 +100,27 @@ function useFindMarvelList(marvelName) {
   // 🤖 const [cache, dispatch] = useMarvelCache()
 
   // 🐶 ajoute 'setData'
-  const  {data, error, status, execute} = useFetchData()
+  const {data, error, status, execute} = useFetchData()
 
   React.useEffect(() => {
     if (!marvelName) {
       return
     }
-    // 🐶 ajoute deux conditions : 
-      // 1. S'il y a des données dans : `cache[marvelName]`
-      // met à jour les données directement avec `setData(cache[marvelName])`
-      // 2. sinon (`cache[marvelName]` est vide )
-      // Appel l'API Rest 
-      // `execute(fetchMarvelsList(marvelName))`
+    // 🐶 ajoute deux conditions :
+    // 1. S'il y a des données dans : `cache[marvelName]`
+    // met à jour les données directement avec `setData(cache[marvelName])`
+    // 2. sinon (`cache[marvelName]` est vide )
+    // Appel l'API Rest
+    // `execute(fetchMarvelsList(marvelName))`
     execute(fetchMarvelsList(marvelName))
-  // 🐶 N'oublie pas les nouvelles dépendances de 'useEffect'
+    // 🐶 N'oublie pas les nouvelles dépendances de 'useEffect'
   }, [marvelName, execute])
   return {data, error, status}
 }
 
 // 🐶 Fais évoluer ce hook pour gérer le cache
 function useFindMarvelByName(marvelName) {
-  const  {data, error, status, execute} = useFetchData()
+  const {data, error, status, execute} = useFetchData()
   React.useEffect(() => {
     if (!marvelName) {
       return
@@ -136,7 +132,7 @@ function useFindMarvelByName(marvelName) {
 
 function Marvel({marvelName}) {
   const state = useFindMarvelByName(marvelName, fetchMarvelById)
-  
+
   const {data: marvel, error, status} = state
   if (status === 'fail') {
     throw error
