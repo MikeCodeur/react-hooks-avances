@@ -11,7 +11,7 @@ const reducer = (state, action) => {
     case 'DECREMENT':
       return {count: state.count - action.payload}
     case 'RESET':
-      return  {count: 0}
+      return {count: 0}
     default:
       throw new Error('Action non supporté')
   }
@@ -40,7 +40,11 @@ function Compteur() {
         onClick={() => decrement(5)}
         value={`décrémenter 5 :  ${state.count}`}
       />
-      <input type="button" onClick={() => reset()} value={`reset ${state.count}`} />
+      <input
+        type="button"
+        onClick={() => reset()}
+        value={`reset ${state.count}`}
+      />
     </div>
   )
 }

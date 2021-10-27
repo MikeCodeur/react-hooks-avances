@@ -49,7 +49,7 @@ function useFetchData(search, fetch) {
     fetch(search)
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
-    // 🐶 adapte les dépendances pour que le useEffect ne s'excute sur la modification de 'callback' 
+    // 🐶 adapte les dépendances pour que le useEffect ne s'excute sur la modification de 'callback'
   }, [search, fetch])
 
   return state

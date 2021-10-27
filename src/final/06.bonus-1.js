@@ -1,5 +1,5 @@
 // useContext
-// 🚀 thème modifiable 
+// 🚀 thème modifiable
 // http://localhost:3000/alone/final/06.bonus-1.js
 
 import * as React from 'react'

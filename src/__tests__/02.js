@@ -10,7 +10,6 @@ test('effectue le rendu et vérifie le style', () => {
   render(<App />)
   const allContainers = screen.getAllByText(/Le marvel n'existe pas/i)
 
-
   allContainers.forEach(container => {
     robertAlertTip(
       () => {
@@ -24,6 +23,4 @@ ${chalk.reset(prettyDOM(container))}
     `.trim(),
     )
   })
-
- 
 })

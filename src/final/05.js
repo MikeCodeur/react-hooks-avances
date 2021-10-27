@@ -4,8 +4,7 @@
 import * as React from 'react'
 import '../04-styles.css'
 
-const Composant = React.forwardRef(function Composant({onsubmit},ref) {
-
+const Composant = React.forwardRef(function Composant({onsubmit}, ref) {
   const [value, setValue] = React.useState('')
   const inputRef = React.useRef()
   const buttonRef = React.useRef()
@@ -48,7 +47,7 @@ function App() {
   const focusInput = () => composantRef.current.focusInput()
   const focusButton = () => composantRef.current.focusButton()
 
-  const handleCheck = (e) => {
+  const handleCheck = e => {
     setChecked(e.target.checked)
     e.target.checked ? focusInput() : focusButton()
   }
@@ -56,12 +55,8 @@ function App() {
     <div>
       <Composant ref={composantRef} onsubmit={setValue} />
       <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={handleCheck}
-        />{' '}
-        Focus sur input / button ?
+        <input type="checkbox" checked={checked} onChange={handleCheck} /> Focus
+        sur input / button ?
       </label>
     </div>
   )

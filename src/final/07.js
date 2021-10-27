@@ -13,7 +13,8 @@ import {
 } from '../marvel'
 import '../02-styles.css'
 
-const cacheFormatDebugValue = (cache) => `\`Expiration ${cache.expire}  : \` => Elements :${cache.data.length}`
+const cacheFormatDebugValue = cache =>
+  `\`Expiration ${cache.expire}  : \` => Elements :${cache.data.length}`
 
 const MarvelCacheContext = React.createContext()
 
@@ -87,7 +88,7 @@ function useFetchData() {
 
 function useFindMarvelByName(marvelName) {
   const [cache, dispatch] = useMarvelCache()
-  
+
   React.useDebugValue(cache)
 
   const {data, error, status, execute, setData} = useFetchData()

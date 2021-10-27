@@ -40,24 +40,24 @@ function useFetchData() {
     promise
       .then(marvel => dispatch({type: 'done', payload: marvel}))
       .catch(error => dispatch({type: 'fail', error}))
-  },[])
+  }, [])
 
   return {data, error, status, execute}
 }
 
 function useFindMarvelList(marvelName) {
-  const  {data, error, status, execute} = useFetchData()
+  const {data, error, status, execute} = useFetchData()
   React.useEffect(() => {
     if (!marvelName) {
       return
     }
     execute(fetchMarvelsList(marvelName))
-  }, [marvelName,execute])
+  }, [marvelName, execute])
   return {data, error, status}
 }
 
 function useFindMarvelByName(marvelName) {
-  const  {data, error, status, execute} = useFetchData()
+  const {data, error, status, execute} = useFetchData()
   React.useEffect(() => {
     if (!marvelName) {
       return
@@ -69,7 +69,7 @@ function useFindMarvelByName(marvelName) {
 
 function Marvel({marvelName}) {
   const state = useFindMarvelByName(marvelName, fetchMarvelById)
-  
+
   const {data: marvel, error, status} = state
   if (status === 'fail') {
     throw error

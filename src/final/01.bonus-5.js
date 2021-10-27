@@ -71,14 +71,14 @@ function ButtonPanel({clickHandler}) {
 const reducer = (state, action) => ({...state, ...action})
 
 function App() {
-  const [state, setState] = React.useReducer(reducer,{
+  const [state, setState] = React.useReducer(reducer, {
     total: null,
     next: null,
     operation: null,
   })
 
   const handleClick = buttonName => {
-    setState(calculate(state, buttonName));
+    setState(calculate(state, buttonName))
   }
 
   return (

@@ -3,13 +3,13 @@ import React from 'react'
 
 interface IQuestion {
   question: string
-  options:string[]
+  options: string[]
   answer: string
 }
 
 interface IQCMInterface {
   exerciseId: string
-  exerciseTitle : string
+  exerciseTitle: string
   quiz: IQuestion[]
 }
 
@@ -19,10 +19,10 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'useReducer : Compteur',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
   {
@@ -30,10 +30,10 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'Hooks Personnalisés : Logique réutilisable',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
   {
@@ -41,10 +41,10 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'useCallBack',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
   {
@@ -52,10 +52,10 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'useLayoutEffect',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
   {
@@ -63,10 +63,10 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'useImperativeHandle',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
   {
@@ -74,22 +74,22 @@ const QCM: Array<IQCMInterface> = [
     exerciseTitle: 'useContext',
     quiz: [
       {
-        question: "Valide simplement cet exercice en cliquant sur validé",
-        options: ["Validé", "Non validé"],
-        answer: "0"
-      }
+        question: 'Valide simplement cet exercice en cliquant sur validé',
+        options: ['Validé', 'Non validé'],
+        answer: '0',
+      },
     ],
   },
-  
+
   {
     exerciseId: 'src/exercise/07.md',
     exerciseTitle: 'useDebugValue',
     quiz: [
       {
-        question: "DOM cest quoi  ?",
-        options: ["chrome", "bbb", "sss", "ddd"],
-        answer: "0"
-      }
+        question: 'DOM cest quoi  ?',
+        options: ['chrome', 'bbb', 'sss', 'ddd'],
+        answer: '0',
+      },
     ],
   },
 ]
@@ -97,6 +97,6 @@ const QCM: Array<IQCMInterface> = [
 //export default QCM;
 
 const QcmComponent = () => {
-  return (<>{ JSON.stringify(QCM, null, 2) }</>);
+  return <>{JSON.stringify(QCM, null, 2)}</>
 }
 export default QcmComponent
