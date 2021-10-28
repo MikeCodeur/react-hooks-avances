@@ -43,7 +43,6 @@ function Marvel({marvelName}) {
   }
   return (
     <div>
-      {' '}
       {marvel ? <MarvelPersoView marvel={marvel} /> : `Le marvel n'existe pas`}
     </div>
   )

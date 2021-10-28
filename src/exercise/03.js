@@ -5,7 +5,6 @@ import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 import {
   fetchMarvel,
-  fetchMarvelById,
   fetchMarvelsList,
   MarvelSearchForm,
   ErrorDisplay,
@@ -76,7 +75,7 @@ function useFindMarvelByName(marvelName) {
 }
 
 function Marvel({marvelName}) {
-  const state = useFindMarvelByName(marvelName, fetchMarvelById)
+  const state = useFindMarvelByName(marvelName)
   const {data: marvel, error, status} = state
   if (status === 'fail') {
     throw error
@@ -90,7 +89,7 @@ function Marvel({marvelName}) {
 }
 
 function MarvelList({marvelName}) {
-  const state = useFindMarvelList(marvelName, fetchMarvelById)
+  const state = useFindMarvelList(marvelName)
   const {data: marvels, error, status} = state
   if (status === 'fail') {
     throw error
