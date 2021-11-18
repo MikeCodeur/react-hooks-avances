@@ -50,10 +50,14 @@ function List() {
   const items = ['react', 'angular', 'vue']
   return (
     <ul style={{...theme.ul}}>
-      {items.map(item => {
-        return <Item>{item}</Item>
-      })}
-    </ul>
+    {items.map((item, index) => {
+      return (
+        <Item key={index} theme={theme}>
+          {item}
+        </Item>
+      )
+    })}
+  </ul>
   )
 }
 function Item({children}) {

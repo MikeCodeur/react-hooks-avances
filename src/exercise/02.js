@@ -13,8 +13,8 @@ import {
 import '../02-styles.css'
 
 // 🐶 créé un hook personnalisé 'useMarvelExist' qui va appeler l'api.
-// Ce hook retournera le state 'exist' à true s'api retourne un marvel
-// Il retournera  à false si fetchMarvel lève une erreur
+// Ce hook retournera le state 'exist' à true si api retourne un marvel
+// Il retournera  à false si 'fetchMarvel' lève une erreur
 function useMarvelExist(marvelName) {
   // 🐶 créé un state 'exist'
   const [exist, setExist] = React.useState(false)
@@ -23,7 +23,7 @@ function useMarvelExist(marvelName) {
     if (!marvelName) {
       return
     }
-    // 🐶 gère l'appelle de l'api
+    // 🐶 gère l'appel de l'api
     // fetchMarvel(marvelName)
     //   .then(() => /* met le state exist à true */)
     //   .catch(() => /* met le state exist à false */)

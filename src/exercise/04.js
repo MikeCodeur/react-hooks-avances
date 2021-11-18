@@ -1,4 +1,4 @@
-// Hook Perso
+// useLayoutEffect
 // http://localhost:3000/alone/exercise/04.js
 
 import * as React from 'react'
@@ -8,7 +8,7 @@ function Composant({onsubmit}) {
   const [value, setValue] = React.useState('')
   const inputRef = React.useRef()
 
-  //React.useLayoutEffect(() => {
+  //🐶 utilise React.useLayoutEffect(() => {
   React.useEffect(() => {
     inputRef.current.focus()
   })

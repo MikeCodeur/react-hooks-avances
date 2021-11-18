@@ -40,7 +40,7 @@ function useFetchData(search, fetch) {
     }
     dispatch({type: 'fetching'})
     fetch(search)
-      .then(marvel => dispatch({type: 'done', payload: marvel}))
+      .then(result => dispatch({type: 'done', payload: result}))
       .catch(error => dispatch({type: 'fail', error}))
   }, [search, fetch])
 
@@ -96,7 +96,7 @@ function MarvelList({marvelName}) {
 
 function App() {
   const [marvelName, setMarvelName] = React.useState('')
-  const [searchList, setSearchList] = React.useState('')
+  const [searchList, setSearchList] = React.useState(false)
   const handleSearch = name => {
     setMarvelName(name)
   }
