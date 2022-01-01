@@ -6,7 +6,6 @@ import * as React from 'react'
 import {ErrorBoundary} from 'react-error-boundary'
 import {
   fetchMarvel,
-  fetchMarvelById,
   fetchMarvelsList,
   MarvelSearchForm,
   ErrorDisplay,
