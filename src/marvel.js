@@ -1,7 +1,6 @@
 /* NE PAS MODIFIER CE FICHIER  */
 /* eslint-disable no-unused-vars */
 import * as React from 'react'
-import {ErrorBoundary} from 'react-error-boundary'
 
 // GET FREE KEY https://developer.marvel.com/account
 // add localhost to referrers
