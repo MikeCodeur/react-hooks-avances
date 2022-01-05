@@ -29,13 +29,8 @@ const fetchMarvel = name => {
         return Promise.reject(
           new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
         )
-      }
+      } // ERROR DU JSON()
     })
-    .catch(error => {
-      return Promise.reject(
-        new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
-      )
-    }) // ERROR DU JSON()
     .catch(error => {
       return Promise.reject(
         new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
@@ -54,11 +49,8 @@ const fetchMarvelById = id => {
         return Promise.reject(
           new Error(`Aucun Marvel trouvé avec l'id "${id}"`),
         )
-      }
+      } // ERROR DU JSON()
     })
-    .catch(error => {
-      return Promise.reject(new Error(`Aucun Marvel trouvé avec l'id "${id}"`))
-    }) // ERROR DU JSON()
     .catch(error => {
       return Promise.reject(new Error(`Aucun Marvel trouvé avec l'id "${id}"`))
     }) // ERROR APPEL API
@@ -75,13 +67,8 @@ const fetchMarvelsList = name => {
         return Promise.reject(
           new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
         )
-      }
+      } // ERROR DU JSON()
     })
-    .catch(error => {
-      return Promise.reject(
-        new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
-      )
-    }) // ERROR DU JSON()
     .catch(error => {
       return Promise.reject(
         new Error(`Aucun Marvel trouvé avec le nom "${name}"`),
