@@ -58,8 +58,8 @@ function List() {
   const items = ['react', 'angular', 'vue']
   return (
     <ul style={{...theme.ul}}>
-      {items.map(item => {
-        return <Item>{item}</Item>
+      {items.map((item, index) => {
+        return <Item key={index}>{item}</Item>
       })}
     </ul>
   )
