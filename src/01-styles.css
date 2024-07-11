@@ -31,12 +31,12 @@
   background-color: #f5923e;
   color: white;
 }
-/* html {
+.htmlExercice {
   height: 100%;
   font-size: 10px;
 }
 
-body {
+.bodyExercice {
   background-color: rgb(250, 250, 250);
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ body {
   height: 100%;
 }
 
-body .github-fork-ribbon:before {
+.bodyExercice .github-fork-ribbon:before {
   background-color: rgb(251, 251, 251);
 }
 
@@ -59,28 +59,28 @@ body .github-fork-ribbon:before {
 }
 
 @media (min-width: 400px) and (min-height: 400px) {
-  html {
+  .htmlExercice {
     font-size: 20px;
   }
 }
 
 @media (min-width: 500px) and (min-height: 500px) {
-  html {
+  .htmlExercice {
     font-size: 30px;
   }
 }
 
 @media (min-width: 600px) and (min-height: 600px) {
-  html {
+  .htmlExercice {
     font-size: 40px;
   }
 }
 
 @media (min-width: 800px) and (min-height: 800px) {
-  html {
+  .htmlExercice {
     font-size: 50px;
   }
-} */
+}
 .component-button-panel {
   background-color: #858694;
   display: flex;
