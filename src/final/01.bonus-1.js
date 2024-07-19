@@ -1,3 +1,4 @@
+"use client"
 // useReducer
 // 🚀 type d'action
 // http://localhost:3000/alone/final/01.bonus-1.js

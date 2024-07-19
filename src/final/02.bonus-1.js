@@ -1,3 +1,4 @@
+"use client"
 // Hook personnalisé
 // 🚀 Hook avec personnage / Error
 // http://localhost:3000/alone/final/02.bonus-1.js

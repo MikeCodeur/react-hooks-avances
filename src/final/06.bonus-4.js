@@ -1,3 +1,4 @@
+"use client"
 // useContext
 // 🚀 Gérer l'expiration des données en cache
 // http://localhost:3000/alone/final/06.bonus-4.js

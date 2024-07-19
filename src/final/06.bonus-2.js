@@ -1,3 +1,4 @@
+"use client"
 // useContext
 // 🚀 hook : context consumer
 // http://localhost:3000/alone/final/06.bonus-2.js

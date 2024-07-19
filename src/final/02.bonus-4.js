@@ -1,3 +1,4 @@
+"use client"
 // Hook personnalisé
 // 🚀 Gérer le chargement avec un status
 // http://localhost:3000/alone/final/02.bonus-4.js

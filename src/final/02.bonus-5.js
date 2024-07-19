@@ -1,3 +1,4 @@
+"use client"
 // Hook personnalisé
 // 🚀 fetch générique
 // http://localhost:3000/alone/final/02.bonus-5.js

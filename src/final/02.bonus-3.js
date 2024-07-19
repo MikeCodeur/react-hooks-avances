@@ -1,3 +1,4 @@
+"use client"
 // Hook personnalisé
 // 🚀 Type d'action et payload
 // http://localhost:3000/alone/final/02.bonus-3.js

@@ -1,3 +1,4 @@
+"use client"
 // useContext
 // 🚀 thème modifiable
 // http://localhost:3000/alone/final/06.bonus-1.js

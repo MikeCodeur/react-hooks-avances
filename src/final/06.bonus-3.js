@@ -1,3 +1,4 @@
+"use client"
 // useContext
 // 🚀 Mettre en cache avec l'API context
 // http://localhost:3000/alone/final/06.bonus-3.js

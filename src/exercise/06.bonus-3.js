@@ -1,3 +1,4 @@
+"use client"
 // useContexte
 // 🚀 Gérer le cache avec le contexte
 // http://localhost:3000/alone/exercise/06.bonus-3.js

@@ -1,3 +1,4 @@
+"use client"
 // useLayoutEffect
 // http://localhost:3000/alone/final/04.js
 

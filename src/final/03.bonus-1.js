@@ -1,3 +1,4 @@
+"use client"
 // useCallback
 // 🚀 Retourner un useCallback
 // http://localhost:3000/alone/final/03.bonus-1.js

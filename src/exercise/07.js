@@ -1,3 +1,4 @@
+"use client"
 // Hook Perso
 // http://localhost:3000/alone/exercise/04.js
 

@@ -1,3 +1,4 @@
+"use client"
 // useReducer
 // 🚀 disptach functions
 // http://localhost:3000/alone/final/01.bonus-2.js
