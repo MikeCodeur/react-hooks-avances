@@ -29,6 +29,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.0.7
         version: 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      big.js:
+        specifier: ^6.2.1
+        version: 6.2.1
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -56,6 +59,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-error-boundary:
+        specifier: ^4.0.13
+        version: 4.0.13(react@18.3.1)
       rehype-format:
         specifier: ^5.0.0
         version: 5.0.0
@@ -97,8 +103,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@mikecodeur/course-app-cli':
-        specifier: 1.0.17
-        version: 1.0.17
+        specifier: 1.0.19
+        version: 1.0.19
       '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)))
@@ -531,8 +537,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@mikecodeur/course-app-cli@1.0.17':
-    resolution: {integrity: sha512-AzOWou86nJU6DxxAsYiO/EMiZ61EdxBSGIC1Qi7xq9j1Erjn9X91JIhSy80WbMPVPseKo7rDxkPxksFVO/MeqQ==}
+  '@mikecodeur/course-app-cli@1.0.19':
+    resolution: {integrity: sha512-QhaZcS57ZCAV/W6twZsOsyaRyg66F7hunopeUMDz915UO9kG0wlAdugh3JP0JaPv1tMoQUfwWsBAWWBrTMkFHw==}
     hasBin: true
 
   '@next/env@14.0.4':
@@ -1495,6 +1501,9 @@ packages:
 
   big.js@5.2.2:
     resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
+
+  big.js@6.2.1:
+    resolution: {integrity: sha512-bCtHMwL9LeDIozFn+oNhhFoq+yQ3BNdnsLSASUxLciOb1vgvpHsIO1dsENiGMgbb4SkP5TrzWzRiLddn8ahVOQ==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -3579,6 +3588,11 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-error-boundary@4.0.13:
+    resolution: {integrity: sha512-b6PwbdSv8XeOSYvjt8LpgpKrZ0yGdtZokYwkwV2wlcZbxgopHX/hgPl5VgpnoVOWd868n1hktM8Qm4b+02MiLQ==}
+    peerDependencies:
+      react: '>=16.13.1'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -4855,7 +4869,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@mikecodeur/course-app-cli@1.0.17':
+  '@mikecodeur/course-app-cli@1.0.19':
     dependencies:
       '@clack/prompts': 0.7.0
       chalk: 5.3.0
@@ -5916,6 +5930,8 @@ snapshots:
   balanced-match@1.0.2: {}
 
   big.js@5.2.2: {}
+
+  big.js@6.2.1: {}
 
   binary-extensions@2.3.0: {}
 
@@ -8628,6 +8644,11 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-error-boundary@4.0.13(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.7
+      react: 18.3.1
 
   react-is@16.13.1: {}
 
